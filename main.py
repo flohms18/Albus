@@ -1,13 +1,7 @@
-from ollama import chat
-from ollama import ChatResponse
+from flask import Flask
 
-response : ChatResponse = chat(model='gemma3', messages=[
-    {
-        'role' : 'user',
-        'content' : 'Why is the sky blue',
-    },
+app = Flask(__name__)
 
-
-])
-
-print(response.message.content)
+@app.route('/')
+def hello_world():
+    return '<h1>Minimal Flask App</h1'
