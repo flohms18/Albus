@@ -1,8 +1,8 @@
-from flask import Flask, render_template
+from fastapi import FastAPI
 
+app = FastAPI()
 
-app = Flask(__name__)
-
-@app.route('/')
-def hello_world():
-    return render_template('index.html')
+@app.get('/')
+def hello():
+    return '<h1>hello fastapi</h1>'
+    
